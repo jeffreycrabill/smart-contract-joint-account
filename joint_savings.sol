@@ -15,7 +15,7 @@ You will do the following:
 
 */
 
-pragma solidity ^0.5.0;
+pragma solidity ^0.8.0;
 
 // Define a new contract named `JointSavings`
 contract JointSavings {
@@ -31,7 +31,7 @@ contract JointSavings {
     address public lastToWithdraw;
 
     uint public last_withdraw_amount;
-    uint public contractBalance
+    uint public contractBalance;
 
 
 
@@ -86,7 +86,7 @@ contract JointSavings {
 
         // Set the values of `accountOne` and `accountTwo` to `account1` and `account2` respectively.
         accountOne = account1;
-        accountTwo = account2
+        accountTwo = account2;
     }
 
     /*
