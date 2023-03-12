@@ -26,8 +26,15 @@ contract JointSavings {
     - A variable of type `address public` named `lastToWithdraw`
     - Two variables of type `uint public` named `lastWithdrawAmount` and `contractBalance`.
     */
-    address payable accountOne = 0x873Ad450656C46cb564eaf418472A1c77d7327Ad;
-    string account_holder = "Jane Doe";
+    address payable accountOne;
+    address payable accountTwo;
+    address public lastToWithdraw;
+
+    uint public last_withdraw_amount;
+    uint public contractBalance
+
+
+
 
     /*
     Define a function named **withdraw** that will accept two arguments.
