@@ -30,7 +30,7 @@ contract JointSavings {
     address payable accountTwo;
     address public lastToWithdraw;
 
-    uint public last_withdraw_amount;
+    uint public lastWithdrawAmount;
     uint public contractBalance;
 
 
@@ -46,7 +46,7 @@ contract JointSavings {
         /*
         Define a `require` statement that checks if the `recipient` is equal to either `accountOne` or `accountTwo`. The `requiere` statement returns the text `"You don't own this account!"` if it does not.
         */
-        require(recipient == accountTwo || recipient == private_savings, "You don't own this account!");
+        require(recipient == accountTwo || recipient == accountOne, "You don't own this account!");
 
         /*
         Define a `require` statement that checks if the `balance` is sufficient to accomplish the withdraw operation. If there are insufficient funds, the text `Insufficient funds!` is returned.
@@ -56,8 +56,8 @@ contract JointSavings {
         /*
         Add and `if` statement to check if the `lastToWithdraw` is not equal to (`!=`) to `recipient` If `lastToWithdraw` is not equal, then set it to the current value of `recipient`.
         */
-        if (last_to_withdraw != recipient) {
-        last_to_withdraw = recipient;
+        if lastToWithdraw != recipient) {
+        lastToWithdraw = recipient;
         }
 
         // Call the `transfer` function of the `recipient` and pass it the `amount` to transfer as an argument.
@@ -67,7 +67,7 @@ contract JointSavings {
         last_withdraw_amount = amount;
 
         // Call the `contractBalance` variable and set it equal to the balance of the contract by using `address(this).balance` to reflect the new balance of the contract.
-        contractBalance = address(this).balance - amount;
+        contractBalance = address(this).balance;
     }
 
     // Define a `public payable` function named `deposit`.
@@ -92,6 +92,5 @@ contract JointSavings {
     /*
     Finally, add the **default fallback function** so that your contract can store Ether sent from outside the deposit function.
     */
-    function() external payable {
-  }
+    fallback() external payable {}
 }
