@@ -15,7 +15,7 @@ You will do the following:
 
 */
 
-pragma solidity ^0.8.0;
+pragma solidity ^0.5.0;
 
 // Define a new contract named `JointSavings`
 contract JointSavings {
@@ -51,7 +51,7 @@ contract JointSavings {
         /*
         Define a `require` statement that checks if the `balance` is sufficient to accomplish the withdraw operation. If there are insufficient funds, the text `Insufficient funds!` is returned.
         */
-        require(address(this).balance >= amount, "Insufficient funds!");
+        require(contractBalance >= amount, "Insufficient funds!");
 
         /*
         Add and `if` statement to check if the `lastToWithdraw` is not equal to (`!=`) to `recipient` If `lastToWithdraw` is not equal, then set it to the current value of `recipient`.
@@ -92,5 +92,5 @@ contract JointSavings {
     /*
     Finally, add the **default fallback function** so that your contract can store Ether sent from outside the deposit function.
     */
-    fallback() external payable {}
+    function() external payable {}
 }
