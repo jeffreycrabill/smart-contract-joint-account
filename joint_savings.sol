@@ -15,11 +15,14 @@ You will do the following:
 
 */
 
+
+
 pragma solidity ^0.5.0;
 
 // Define a new contract named `JointSavings`
 contract JointSavings {
 
+    
     /*
     Inside the new contract define the following variables:
     - Two variables of type `address payable` named `accountOne` and `accountTwo`
